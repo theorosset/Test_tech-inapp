@@ -7,3 +7,7 @@
     margin-right: $r;
     margin-left: $l;
 }
+@mixin flexColumn{
+    display: flex;
+    flex-direction: column;
+}
