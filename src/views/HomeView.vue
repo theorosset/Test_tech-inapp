@@ -1,10 +1,12 @@
 <template>
   <div>
-    <p>Hello World!</p>
+    <router-link to="/allArticles">Liste des articles</router-link>
   </div>
 </template>
 
 <script>
+/*eslint-disable*/
+
 export default {
   name: "HomeView",
   components: {},
