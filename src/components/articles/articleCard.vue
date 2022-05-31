@@ -32,6 +32,7 @@ a{
     color: black;
     text-decoration: none;
 }
+
 h1{
     font-size: 21px;
     font-weight: bold;
@@ -63,6 +64,11 @@ p{
     margin-top: 30px;
     border: 1px solid black;
     border-radius: 5px;
+    transition-duration: 0.3s;
+    &:hover{
+        transform: scale(1.05);
+        transition-duration: 0.4s;
+    }
 }
 
 
