@@ -1,0 +1,9 @@
+@mixin textEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin marginLeftRight($l, $r){
+    margin-right: $r;
+    margin-left: $l;
+}
