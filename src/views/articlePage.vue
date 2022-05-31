@@ -1,4 +1,5 @@
 <template>
+  <h1>Articles de notre blog</h1>
   <articleList :articles="articles" :users="users" />
 </template>
 
@@ -24,4 +25,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h1{
+    font-size: 21px;
+    font-weight: bold;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+</style>

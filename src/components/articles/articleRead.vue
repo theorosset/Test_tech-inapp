@@ -2,13 +2,17 @@
   <div class="article">
     <h1 class="title">{{ title }}</h1>
     <p>{{ body }}</p>
+    <articleGestionLike :id="id" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import articleGestionLike from "../articles/articleGestionLike.vue";
+
 export default {
   name: "articleRead",
+  components: { articleGestionLike },
   data() {
     return {
       title: "",
@@ -18,15 +22,15 @@ export default {
   props: { id: { type: String } },
   async mounted() {
     await this.$nextTick();
-    await this.getArticleInfo();
+    this.getArticleInfo();
   },
-  components: {},
+
   methods: {
     getArticleInfo() {
       axios
         .get(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
         .then((res) => {
-          return (this.title = res.data.title), (this.body = res.data.body);
+          (this.title = res.data.title), (this.body = res.data.body);
         })
         .catch(
           () => (this.title = "l'article ne peux s'afficher actuellement")
@@ -36,14 +40,14 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/mixin.scss";
 h1 {
   font-weight: bold;
   font-size: 21px;
 }
 
 .article {
-  display: flex;
-  flex-direction: column;
+  @include flexColumn;
   max-width: 1100px;
   margin: auto;
   border: 1px solid black;
