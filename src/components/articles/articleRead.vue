@@ -1,30 +1,39 @@
 <template>
   <div class="article">
-    <gestionImage :id="id" />
-    <h1 class="title">{{ title }}</h1>
-    <p>{{ body }}</p>
-    <articleGestionLike :id="id" />
+    <gestionUsers :postUserId="postUserId" :users="users" />
+    <div class="articleText">
+      <gestionImage :id="id" />
+      <h1 class="title">{{ title }}</h1>
+      <p>{{ body }}</p>
+      <articleGestionLike :id="id" />
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import gestionUsers from "../page/gestionUsers.vue";
 import articleGestionLike from "../articles/articleGestionLike.vue";
 import gestionImage from "../page/gestionImage.vue";
 
+import { mapState, mapActions } from "vuex";
 export default {
   name: "articleRead",
-  components: { articleGestionLike, gestionImage },
+  components: { articleGestionLike, gestionImage, gestionUsers },
   data() {
     return {
       title: "",
       body: "",
     };
   },
-  props: { id: { type: String } },
+  computed: {
+    ...mapState(["users"]),
+  },
+  props: { id: { type: String }, postUserId: { type: String } },
+
   async mounted() {
     await this.$nextTick();
-
+    await this.axiosUsers();
     this.getArticleInfo();
   },
 
@@ -39,6 +48,7 @@ export default {
           () => (this.title = "l'article ne peux s'afficher actuellement")
         );
     },
+    ...mapActions(["axiosUsers"]),
   },
 };
 </script>
@@ -47,18 +57,25 @@ export default {
 h1 {
   font-weight: bold;
   font-size: 21px;
+  @include marginTopBottom(20px, 25px);
 }
 
 .article {
   @include flexColumn;
-  @include paddingLeftRight(40px, 40px);
   @include borderShadowRadius();
-  max-width: 1100px;
+  max-width: 670px;
   margin: auto;
-  align-items: center;
-  justify-content: space-around;
-  height: 300px;
   margin-top: 40px;
   background-color: white;
+}
+.articleText {
+  @include flexColumn;
+  @include paddingLeftRight(50px, 50px);
+  align-items: center;
+}
+@media screen and (max-width: 520px) {
+  .articleText {
+    @include paddingLeftRight(20px, 20px);
+  }
 }
 </style>

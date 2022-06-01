@@ -34,6 +34,7 @@ li {
   align-items: center;
   margin-top: 20px;
   background-color: white;
+  max-width: 670px;
 }
 .ifNoArticleLike {
   @include flexColumn;

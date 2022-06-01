@@ -8,29 +8,28 @@ import articleList from "../components/articles/articleList.vue";
 import { mapActions, mapState } from "vuex";
 
 export default {
-  /*eslint-disable*/
   name: "articlePage",
   components: { articleList },
   computed: {
-    ...mapState(["articles","users"]),
+    ...mapState(["articles", "users"]),
   },
- async mounted(){
+  async mounted() {
     await this.$nextTick();
     await this.axiosArticles();
     await this.axiosUsers();
   },
-  methods:{
-    ...mapActions(["axiosArticles","axiosUsers"])
-  }
+  methods: {
+    ...mapActions(["axiosArticles", "axiosUsers"]),
+  },
 };
 </script>
 
 <style scoped>
-h1{
-    font-size: 21px;
-    font-weight: bold;
-    max-width: 500px;
-    margin: auto;
-    margin-top: 20px;
+h1 {
+  font-size: 21px;
+  font-weight: bold;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
 }
 </style>

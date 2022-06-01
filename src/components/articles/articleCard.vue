@@ -1,7 +1,12 @@
 <template>
   <div class="articleCard">
     <li v-for="article of articles" :key="article.id" class="articleElement">
-      <router-link :to="{ name: 'articleRead', params: { id: article.id } }">
+      <router-link
+        :to="{
+          name: 'articleRead',
+          params: { id: article.id, postUserId: article.userId },
+        }"
+      >
         <gestionsUsers :users="users" :postUserId="article.userId" />
         <h2>{{ article.title }}</h2>
         <p>{{ article.body }}</p>
@@ -50,7 +55,7 @@ p {
 .articleElement {
   @include flexColumn;
   @include borderShadowRadius;
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
   margin-top: 30px;
 

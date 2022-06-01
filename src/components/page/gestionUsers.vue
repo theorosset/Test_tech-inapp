@@ -7,7 +7,7 @@
 export default {
   name: "gestionsUsers",
 
-  props: { postUserId: { type: Number }, users: { type: Array } },
+  props: ["postUserId", "users"],
   async mounted() {
     await this.$nextTick();
     await this.findAllName();
@@ -15,7 +15,9 @@ export default {
   methods: {
     findAllName() {
       const findUser = this.users.find((el) => el.id == this.postUserId);
-      return findUser.name;
+      if (findUser != undefined) {
+        return findUser.name;
+      }
     },
   },
 };

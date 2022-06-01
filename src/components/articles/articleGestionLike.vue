@@ -73,8 +73,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/mixin.scss";
+
 #articleLike {
   font-size: 21px;
+  @include marginTopBottom(15px, 15px);
   &:hover {
     cursor: pointer;
   }
