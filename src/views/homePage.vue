@@ -7,10 +7,11 @@
         :articlesLike="articlesLike"
       />
     </div>
-
-    <router-link to="/allArticles" v-if="articlesLike.length > 0">
-      Liste des articles</router-link
-    >
+    <div class="allArticle">
+      <router-link to="/allArticles" v-if="articlesLike.length > 0">
+        Voir la liste de tout les articles</router-link
+      >
+    </div>
   </div>
 </template>
 
@@ -65,5 +66,10 @@ export default {
 p {
   font-size: 2rem;
   font-family: "Roboto", sans-serif;
+}
+.allArticle {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 </style>

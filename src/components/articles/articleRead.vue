@@ -24,6 +24,7 @@ export default {
   props: { id: { type: String } },
   async mounted() {
     await this.$nextTick();
+
     this.getArticleInfo();
   },
 
