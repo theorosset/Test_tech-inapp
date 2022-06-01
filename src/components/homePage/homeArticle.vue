@@ -15,6 +15,7 @@
 <script>
 export default {
   name: "homeArticle",
+  components: {},
   props: { articlesLike: { type: Array } },
 };
 </script>
@@ -23,8 +24,8 @@ export default {
 @import "@/assets/mixin.scss";
 
 li {
-  border: 1px solid black;
-  margin-bottom: 10px;
+  @include borderShadowRadius;
+  margin-top: 20px;
 }
 .ifNoArticleLike {
   @include flexColumn;
@@ -33,5 +34,15 @@ li {
   @include borderShadowRadius;
   margin-top: 50px;
   align-items: center;
+}
+h2 {
+  @include textEllipsis;
+  @include marginLeftRight(10px, 10px);
+  @include h2Article;
+}
+p {
+  @include textEllipsis;
+  @include marginLeftRight(10px, 10px);
+  @include marginTopBottom(15px, 10px);
 }
 </style>

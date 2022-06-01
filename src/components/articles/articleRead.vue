@@ -1,5 +1,6 @@
 <template>
   <div class="article">
+    <gestionImage :id="id" />
     <h1 class="title">{{ title }}</h1>
     <p>{{ body }}</p>
     <articleGestionLike :id="id" />
@@ -9,10 +10,11 @@
 <script>
 import axios from "axios";
 import articleGestionLike from "../articles/articleGestionLike.vue";
+import gestionImage from "../page/gestionImage.vue";
 
 export default {
   name: "articleRead",
-  components: { articleGestionLike },
+  components: { articleGestionLike, gestionImage },
   data() {
     return {
       title: "",

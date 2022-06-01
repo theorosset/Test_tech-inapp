@@ -31,16 +31,13 @@ a{
 h2{
     @include textEllipsis;
     @include marginLeftRight(10px,10px);
-    font-size: 19px;
-    font-weight: bold;
-    margin-top: 10px
+    @include h2Article;
 }
 
 p{
     @include textEllipsis;
     @include marginLeftRight(10px,10px);
-    margin-top: 15px;
-    margin-bottom: 10px;
+    @include marginTopBottom(15px,10px)
     
 }
 
