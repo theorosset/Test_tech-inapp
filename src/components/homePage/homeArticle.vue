@@ -1,6 +1,7 @@
 <template>
   <div v-if="articlesLike.length > 0">
     <li v-for="articleLike of articlesLike" :key="articleLike.id">
+      <gestionsUsers :postUserId="articleLike.userId" :users="users" />
       <gestionImage :id="JSON.parse(articleLike.id)" />
       <h2>{{ articleLike.title }}</h2>
       <p>{{ articleLike.body }}</p>
@@ -15,11 +16,12 @@
 </template>
 <script>
 import gestionImage from "../page/gestionImage.vue";
+import gestionsUsers from "../page/gestionUsers.vue";
 
 export default {
   name: "homeArticle",
-  components: { gestionImage },
-  props: { articlesLike: { type: Array } },
+  components: { gestionImage, gestionsUsers },
+  props: { articlesLike: { type: Array }, users: { type: Array } },
 };
 </script>
 
@@ -41,12 +43,10 @@ li {
   align-items: center;
 }
 h2 {
-  @include textEllipsis;
   @include marginLeftRight(10px, 10px);
   @include h2Article;
 }
 p {
-  @include textEllipsis;
   @include marginLeftRight(10px, 10px);
   @include marginTopBottom(15px, 10px);
 }

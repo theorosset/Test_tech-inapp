@@ -28,6 +28,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 img {
+  margin-top: 10px;
   max-height: 150px;
   max-width: 150px;
 }

@@ -1,7 +1,7 @@
 <template>
   <section>
     <ul>
-      <homeArticle :articlesLike="articlesLike" />
+      <homeArticle :users="users" :articlesLike="articlesLike" />
     </ul>
   </section>
 </template>
@@ -11,7 +11,7 @@ import homeArticle from "./homeArticle.vue";
 export default {
   name: "homeArticleList",
   components: { homeArticle },
-  props: { articlesLike: { type: Array } },
+  props: { articlesLike: { type: Array }, users: { type: Array } },
 
   methods: {},
 };

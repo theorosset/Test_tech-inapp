@@ -52,7 +52,7 @@ export default {
       }
       this.findIfHasLike();
     },
-
+    //function pour regarder si le post a déjà été like ou non
     findIfHasLike() {
       let articleInLs = localStorage.getItem("articleLike")
         ? JSON.parse(localStorage.getItem("articleLike"))

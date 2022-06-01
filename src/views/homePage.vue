@@ -1,7 +1,11 @@
 <template>
   <div>
     <div class="articleLikeList">
-      <homeArticleList :articles="articles" :articlesLike="articlesLike" />
+      <homeArticleList
+        :articles="articles"
+        :users="users"
+        :articlesLike="articlesLike"
+      />
     </div>
 
     <router-link to="/allArticles" v-if="articlesLike.length > 0">
