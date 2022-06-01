@@ -1,6 +1,7 @@
 <template>
   <div v-if="articlesLike.length > 0">
     <li v-for="articleLike of articlesLike" :key="articleLike.id">
+      <gestionImage :id="JSON.parse(articleLike.id)" />
       <h2>{{ articleLike.title }}</h2>
       <p>{{ articleLike.body }}</p>
     </li>
@@ -13,9 +14,11 @@
   </div>
 </template>
 <script>
+import gestionImage from "../page/gestionImage.vue";
+
 export default {
   name: "homeArticle",
-  components: {},
+  components: { gestionImage },
   props: { articlesLike: { type: Array } },
 };
 </script>
@@ -24,7 +27,9 @@ export default {
 @import "@/assets/mixin.scss";
 
 li {
+  @include flexColumn;
   @include borderShadowRadius;
+  align-items: center;
   margin-top: 20px;
 }
 .ifNoArticleLike {

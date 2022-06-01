@@ -43,10 +43,7 @@ export default {
           return lsElement.id == articleElement.id;
         });
         if (findInArticle != undefined) {
-          return (
-            this.articlesLike.push(findInArticle),
-            console.log(this.articlesLike)
-          );
+          return this.articlesLike.push(findInArticle);
         }
       });
     },

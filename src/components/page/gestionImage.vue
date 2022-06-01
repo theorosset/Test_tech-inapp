@@ -6,7 +6,7 @@ import { mapActions, mapState } from "vuex";
 
 export default {
   name: "gestionImage",
-  props: { id: { type: String } },
+  props: ["id"],
   computed: {
     ...mapState(["images"]),
   },
@@ -26,4 +26,9 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  max-height: 150px;
+  max-width: 150px;
+}
+</style>
