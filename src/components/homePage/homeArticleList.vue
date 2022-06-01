@@ -1,6 +1,5 @@
 <template>
   <section>
-    <h1>Article que vous aimez</h1>
     <ul>
       <homeArticle :articlesLike="articlesLike" />
     </ul>

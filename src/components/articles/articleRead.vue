@@ -48,6 +48,7 @@ h1 {
 
 .article {
   @include flexColumn;
+  @include paddingLeftRight(40px, 40px);
   max-width: 1100px;
   margin: auto;
   border: 1px solid black;
@@ -55,7 +56,5 @@ h1 {
   justify-content: space-around;
   height: 300px;
   margin-top: 40px;
-  padding-left: 50px;
-  padding-right: 50px;
 }
 </style>

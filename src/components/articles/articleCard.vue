@@ -46,11 +46,11 @@ p{
 
 .articleElement{
    @include flexColumn;
+   @include borderShadowRadius;
     max-width: 500px;
     margin: auto;
     margin-top: 30px;
-    border: 1px solid black;
-    border-radius: 5px;
+    
     transition-duration: 0.3s;
     &:hover{
         transform: scale(1.05);
