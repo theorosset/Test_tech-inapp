@@ -33,6 +33,7 @@ li {
   @include borderShadowRadius;
   align-items: center;
   margin-top: 20px;
+  background-color: white;
 }
 .ifNoArticleLike {
   @include flexColumn;

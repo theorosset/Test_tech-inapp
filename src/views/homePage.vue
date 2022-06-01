@@ -57,6 +57,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/mixin.scss";
+
 .articleLikeList {
   display: flex;
   justify-content: center;
@@ -70,6 +72,6 @@ p {
 .allArticle {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  @include marginTopBottom(50px, 50px);
 }
 </style>

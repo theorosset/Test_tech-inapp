@@ -26,6 +26,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/mixin.scss";
+li {
+  background-color: white;
+}
+
 a {
   color: black;
   text-decoration: none;

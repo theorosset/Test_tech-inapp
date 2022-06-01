@@ -49,7 +49,9 @@ export default {
 #app {
   height: 100vh;
 }
-
+body {
+  background-color: #dae0e6;
+}
 nav {
   height: 4rem;
   padding: 0 0.5rem;

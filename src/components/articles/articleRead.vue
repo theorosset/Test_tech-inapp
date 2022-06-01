@@ -52,12 +52,13 @@ h1 {
 .article {
   @include flexColumn;
   @include paddingLeftRight(40px, 40px);
+  @include borderShadowRadius();
   max-width: 1100px;
   margin: auto;
-  border: 1px solid black;
   align-items: center;
   justify-content: space-around;
   height: 300px;
   margin-top: 40px;
+  background-color: white;
 }
 </style>
