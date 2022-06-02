@@ -1,11 +1,11 @@
 <template>
   <i
-    id="articleLike"
+    id="articleIconLike"
     v-if="hasLike == false"
     @click="liked"
     class="far fa-thumbs-up"
   ></i>
-  <i id="articleLike" v-else @click="liked" class="fas fa-thumbs-up"></i>
+  <i id="articleIconLike" v-else @click="liked" class="fas fa-thumbs-up"></i>
 </template>
 
 <script>
@@ -75,7 +75,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/mixin.scss";
 
-#articleLike {
+#articleIconLike {
   font-size: 21px;
   @include marginTopBottom(15px, 15px);
   &:hover {

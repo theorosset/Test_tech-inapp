@@ -51,5 +51,6 @@ h2 {
 p {
   @include marginLeftRight(10px, 10px);
   @include marginTopBottom(15px, 10px);
+  background-color: white;
 }
 </style>
