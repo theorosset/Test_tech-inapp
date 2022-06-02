@@ -44,6 +44,7 @@ h2 {
   @include textEllipsis;
   @include marginLeftRight(10px, 10px);
   @include h2Article;
+  @include marginTopBottom(15px, 15px);
 }
 
 p {

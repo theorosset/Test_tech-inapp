@@ -36,5 +36,6 @@ div {
   @include marginTopBottom(10px, 10px);
   font-weight: 500;
   font-size: 17px;
+  font-family: "Georgia", sans-serif;
 }
 </style>

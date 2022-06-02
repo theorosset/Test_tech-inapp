@@ -31,5 +31,6 @@ h1 {
   max-width: 600px;
   margin: auto;
   margin-top: 20px;
+  font-family: "Georgia", sans-serif;
 }
 </style>
