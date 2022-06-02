@@ -76,8 +76,8 @@ export default {
 @import "@/assets/mixin.scss";
 
 #articleIconLike {
-  font-size: 21px;
-  @include marginTopBottom(15px, 15px);
+  font-size: 25px;
+  @include marginTopBottom(20px, 15px);
   &:hover {
     cursor: pointer;
   }
